@@ -1,0 +1,5 @@
+.page.entry-page
+  .image{style: 'background-image: url({{vm.entry.image}})'}
+  %h2.entry-word{scale: {fit: ''}}
+    %span {{ vm.entry.name }}
+  .description{"ng-bind-html" => "vm.entry.description"}

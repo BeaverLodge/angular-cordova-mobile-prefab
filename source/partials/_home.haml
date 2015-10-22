@@ -1,0 +1,13 @@
+.page.home-page
+  %ul
+    %li
+      %a{href: '#/list'}
+        .menu-item
+          %h3.menu-label {{ vm.labelForList }}
+
+    %li
+      %a{href: '#/tabs'}
+        .menu-item
+          %h3.menu-label {{ vm.labelForTabs }}
+
+  %a{href: 'javascript:void(0);', ng: {click: 'vm.loadData()'}} {{ vm.labelForData }}

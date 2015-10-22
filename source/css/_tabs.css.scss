@@ -1,0 +1,64 @@
+$tab_header_height: 4em;
+.tab-headers {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+
+  background-color: $tab_header_background;
+
+  a {
+    text-decoration: none;
+    color: $tab_header_color;
+  }
+}
+
+.tab-header {
+  height: $tab_header_height;
+  line-height: $tab_header_height; 
+  display: inline-block;
+  width: 33%; 
+  text-align: center;
+}
+
+.tab-content {
+  margin-top: $tab_header_height;
+}
+
+.android {
+  .tab-header {
+    height: $tab_header_height;
+
+    &.active {
+      border-bottom: 3px solid $tab_header_active_color;
+    }
+  }
+
+  .tab-content {
+    margin-top: $tab_header_height;
+  }
+}
+
+.ios {
+  .tab-headers {
+    top: initial;
+    bottom: $topbar-height;
+  }
+
+  .tab-header {
+    &.active {
+      a {
+        color: $tab_header_active_color;
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: 0;
+  }
+
+  .tab-page {
+    padding-bottom: $tab_header_height;
+  }
+}

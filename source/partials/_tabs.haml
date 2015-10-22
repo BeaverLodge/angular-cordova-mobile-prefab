@@ -1,0 +1,11 @@
+.page.tabs-page
+  %ul.tab-headers
+    %li.tab-header{ng: {repeat: 'tab in vm.tabs', class: '{active: tab == vm.selectedTab}'}}
+      %a{href: 'javascript:void(0)', ng: {click: 'vm.selectContent($index)'}} {{ tab.label }}
+  .tab-content{slick: {carousel: ''}}
+    .tab
+      = partial '/partials/tab1'
+    .tab
+      = partial '/partials/tab2'
+    .tab
+      = partial '/partials/tab3'
