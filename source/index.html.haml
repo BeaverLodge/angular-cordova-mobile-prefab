@@ -1,8 +1,9 @@
-= partial 'partials/navigation'
-
 = partial 'partials/sidebar'
 
-%snap-content{snap: {dragger: ''}}
+%snap-content
+  = partial 'partials/navigation'
+
   .page-container{ng: {view: ''}, autoscroll: true, detect: {keyboard: '', back: ''}}
 
-  .player
+  
+.player
