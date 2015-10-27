@@ -5,6 +5,8 @@ $tab_header_height: 4em;
   z-index: 100;
   margin: 0;
   padding: 0;
+  margin-top: -$page-padding;
+  margin-left: -$page-padding;
 
   background-color: $tab_header_background;
 
