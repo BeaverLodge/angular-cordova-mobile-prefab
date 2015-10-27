@@ -14,7 +14,7 @@ class Controller {
     self.labelForData = i18nService.get('homeData');
 
     self.loadData = function() {
-      ['','','','','','','','','','',''].forEach((i,idx) => {
+      ['','','','','','','','','','','','','','','','','','','','',''].forEach((i,idx) => {
         entryService.save({
           id: idx+1,
           name: `Donkey ${idx+1}`,
