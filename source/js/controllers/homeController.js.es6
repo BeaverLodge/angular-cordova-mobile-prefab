@@ -1,5 +1,5 @@
 class Controller {
-  constructor($rootScope, i18nService, entryService) {
+  constructor($rootScope, i18nService, entryService, snapRemote) {
     const self = this;
 
     $rootScope.$emit('navigationConfig', 
@@ -26,4 +26,4 @@ class Controller {
   }
 }
 
-angular.module('app').controller('homeController', ['$rootScope', 'i18nService', 'entryService', Controller]);
+angular.module('app').controller('homeController', ['$rootScope', 'i18nService', 'entryService', 'snapRemote', Controller]);
