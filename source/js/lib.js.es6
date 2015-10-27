@@ -16,7 +16,6 @@
 //= require 'angular-touch/angular-touch'
 //= require 'angular-sanitize/angular-sanitize'
 
-//= require 'foundation/js/foundation'
 //= require 'slick-carousel/slick/slick'
 
 //= require 'jplayer/dist/jplayer/jquery.jplayer'
@@ -26,3 +25,6 @@
 //= require 'angulartics/dist/angulartics-ga.min'
 
 //= require ./lib/polyfillBlobConstructor
+
+//= require 'snapjs/snap'
+//= require 'angular-snap/angular-snap'
