@@ -1,16 +1,14 @@
 @import 'normalize';
+@import 'snapjs/snap';
 @import 'bourbon/bourbon';
 @import 'base/base';
 @import 'neat/neat';
 @import 'slick-carousel/slick/slick';
 @import 'angular-snap/angular-snap';
-@import 'snapjs/snap';
 @import 'mixins';
 @import 'transitions';
 @import 'animations';
 
-@import 'colors';
-@import 'variables';
 @import 'fonts';
 @import 'navigation';
 @import 'layout';
@@ -21,4 +19,9 @@ body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  background-color: $secondary-background-color;
+}
+
+.page {
+  background-color: $base-background-color;
 }

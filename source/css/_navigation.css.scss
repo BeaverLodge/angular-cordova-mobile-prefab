@@ -1,7 +1,7 @@
-$action_button_width: 45px;
+$action-button-width: 45px;
 
 .navigation {
-  background-color: $navbar_background;
+  background-color: $navbar-background;
 
   a {
     color: white;
@@ -12,7 +12,7 @@ $action_button_width: 45px;
     position: absolute;
     
     height: 100%;
-    width: $action_button_width;
+    width: $action-button-width;
     
     text-align: center;
 
@@ -21,9 +21,9 @@ $action_button_width: 45px;
       visibility: visible;
     }
 
-    $action_margin: 3px;
+    $action-margin: 3px;
     &.back {
-      left: $action_margin;
+      left: $action-margin;
       img {
         width: 70%;
         height: 90%;
@@ -53,7 +53,6 @@ $action_button_width: 45px;
   }
 
   .title {
-    font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', 'sans-serif';
     text-transform: uppercase;
     color: white;
     font-size: 1.25em;
@@ -70,7 +69,9 @@ $action_button_width: 45px;
       display: block;
       position: absolute;
       left: 0;
-      width: $action_button_width;
+      width: $action-button-width
+
+  ;
       height: 100%;
       background-image: url(../img/logo.png);
       background-position: center;
@@ -80,7 +81,9 @@ $action_button_width: 45px;
 
     .title {
       position: absolute;
-      left: $action_button_width;
+      left: $action-button-width
+
+  ;
       margin-top: 10px;
     }
 
