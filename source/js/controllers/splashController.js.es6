@@ -1,16 +1,17 @@
 class Controller {
-  constructor($rootScope, $location) {
+  constructor($rootScope, $location, $timeout) {
     $rootScope.$emit('navigationConfig', 
       {
-        navigationAvailable: false,
-        searchAvailable: false
+        navigationAvailable: false
       }
     );
 
     Platform.isReady(function() {
-      $location.path('/home');
+      $timeout(function() {
+        $location.path('/home');
+      }, 0);
     });
   }
 }
 
-angular.module('app').controller('splashController', ['$rootScope', '$location', Controller]);
+angular.module('app').controller('splashController', ['$rootScope', '$location', '$timeout', Controller]);
