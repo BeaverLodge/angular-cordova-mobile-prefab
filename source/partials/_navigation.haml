@@ -1,6 +1,6 @@
 .navigation{ng: {controller: 'navigationController as vm', show: 'vm.navigationAvailable'}}
   %nav.top-bar{data: {topbar: ''}}
     %a.back-action{href: 'javascript:void(0)', ng: {click: 'vm.backClicked()'}}
-      = partial 'partials/icon'
+      %menu-icon{'show-arrow': 'vm.backAction'}
       .title {{ vm.labelForTitle }}
     .title {{ vm.labelForTitle }}
