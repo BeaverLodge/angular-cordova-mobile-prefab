@@ -8,7 +8,7 @@ class Platform {
     if (window.isWebView) {
       document.addEventListener('deviceready', () => {
         this.readyFlag = true;
-        this.readyCallbacks.forEach(function(cb) { return cb(); });
+        this.readyCallbacks.forEach(function(cb) { cb(); });
         this.readyCallbacks = [];
       });
     } else {  
@@ -18,9 +18,9 @@ class Platform {
 
   isReady(callback) {
     if (this.readyFlag) {
-      return callback();
+      callback();
     } else {
-      return this.readyCallbacks.push(callback);
+      this.readyCallbacks.push(callback);
     }
   }
 }

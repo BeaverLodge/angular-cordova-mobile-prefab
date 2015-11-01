@@ -3,7 +3,7 @@ angular.module('app').directive("detectBack", [
     return {
       restrict: "A",
       link: function($scope, $element, attrs) {
-        return $element.on('$animate:close', function() {
+        $element.on('$animate:close', function() {
           if (window.backInProgress > 0) {
             window.backInProgress--;
           }
