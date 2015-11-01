@@ -13,12 +13,12 @@ task :bootstrap do
   sh "bower install"
 
   puts "Installing Cordova and plugins"
-  sh "cordova plugin add org.apache.cordova.device@0.2.11"
-  sh "cordova plugin add org.apache.cordova.dialogs@0.2.8"
-  sh "cordova plugin add org.apache.cordova.file@1.2.0"
-  sh "cordova plugin add org.apache.cordova.inappbrowser@0.5.2"
-  sh "cordova plugin add org.apache.cordova.media@0.2.11"
-  sh "cordova plugin add org.apache.cordova.statusbar@0.1.10"
+  sh "cordova plugin add cordova-plugin-device"
+  sh "cordova plugin add cordova-plugin-dialogs"
+  sh "cordova plugin add cordova-plugin-file"
+  sh "cordova plugin add cordova-plugin-inappbrowser"
+  sh "cordova plugin add cordova-plugin-media"
+  sh "cordova plugin add cordova-plugin-statusbar"
 
   puts "Adding iOS and Android platforms"
   sh "cordova platform add ios"
