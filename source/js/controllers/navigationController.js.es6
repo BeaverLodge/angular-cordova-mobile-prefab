@@ -18,7 +18,11 @@ class Controller {
 
     document.addEventListener('backbutton', function(e) {
       $scope.$apply(function() {
-        self.backClicked();
+        if ($location.path() === '/home') { 
+          navigator.app.exitApp(); 
+        } else {
+          self.backAction();
+        }
       });
     });
 
@@ -28,8 +32,6 @@ class Controller {
         window.backInProgress++;
         $('body').addClass('back');
         self.backAction();    
-      } else {
-        if ($location.path() === '/home') { navigator.app.exitApp(); }
       }
     };
   }
