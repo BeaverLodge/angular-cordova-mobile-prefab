@@ -2,6 +2,6 @@
   %ul
     %li{ng: {repeat: 'entry in vm.entries'}}
       %a{href: '#/entries/{{entry.id}}'}
-        %h3.name{fit: {text: '0.8'}} {{ entry.name }}
+        %button {{ entry.name }}
 
 %side-dragger
