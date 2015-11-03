@@ -4,9 +4,9 @@ angular.module('app').directive('menuIcon', ['snapRemote', function(snapRemote) 
     scope: {
       showArrow: '=showArrow'
     },
-    templateUrl: 'partials/icon.html',
+    templateUrl: 'partials/menu_icon.html',
     link: function(scope, element, attrs) {
-      const menuIcon = element.find('.icon');
+      const menuIcon = element.find('.menu-icon');
 
       snapRemote.getSnapper().then(function(snapper) {
         const canToggle = function() {

@@ -1,27 +1,29 @@
-.icon {
+.menu-icon {
   position: relative;
   top: 9px;
   left: 10px;
+  width: 20px;
+  height: $topbar-height;
 
   $center-bar-position: translate3d(0,15px,0);
 
-  .icon1, .icon2, .icon3 {
+  .menu-icon1, .menu-icon2, .menu-icon3 {
     border-bottom: 2px solid white;
-    width: 20px;
+    width: 100%;
     display: inline-block;
     position: absolute;
     transition: all 0.3s ease;
   }
 
-  .icon1 {
+  .menu-icon1 {
     transform: translate3d(0,10px,0);
   }
 
-  .icon2 {
+  .menu-icon2 {
     transform: $center-bar-position; 
   }
 
-  .icon3 {
+  .menu-icon3 {
     transform: translate3d(0,20px, 0);
   }
 
@@ -29,25 +31,25 @@
     $arrow-angle: 25deg;
     $arrow-head-size: 0.4;
 
-    .icon1 {
+    .menu-icon1 {
       transform: translate3d(-7px,11px,0) scaleX($arrow-head-size) rotateZ(-$arrow-angle);
     }
 
-    .icon3 {
+    .menu-icon3 {
       transform: translate3d(-7px,19px,0) scaleX($arrow-head-size) rotateZ($arrow-angle) ;
     }
   }
 
   &.cross {
-    .icon1 {
+    .menu-icon1 {
       transform: $center-bar-position scaleX(1.1) rotateZ(-45deg);
     }
 
-    .icon2 {
+    .menu-icon2 {
       transform: $center-bar-position scaleX(0.01);
     }
 
-    .icon3 {
+    .menu-icon3 {
       transform: $center-bar-position scaleX(1.1) rotateZ(45deg);
     }
   }
