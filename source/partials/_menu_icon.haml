@@ -1,4 +1,4 @@
-.menu-icon{ng: {class: '{arrow: showArrow}'}}
-  %span.menu-icon1
-  %span.menu-icon2
-  %span.menu-icon3
+.menu-icon{'ng-class': '{arrow: hasBackAction()}', 'ng-click': 'performAction()'}
+  %img.menu-icon1{ src: 'img/menu_line.svg' }
+  %img.menu-icon2{ src: 'img/menu_line.svg' }
+  %img.menu-icon3{ src: 'img/menu_line.svg' }
