@@ -32,7 +32,7 @@ The following documents contain more information about this prefab.
 
 # Getting started
 
-Fork this repo and clone it locally.
+Fork this repo and clone it locally. If you are a developer start at [Development Environment Setup][].
 
 Read through the documents listed above. [Meetings and Process][] outlines some meetings and legwork you probably want to get started on first. [Development Environment Setup][] and [Application Description][] is a good place to start to get a grip on the technical details.
 

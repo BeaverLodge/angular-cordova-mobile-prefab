@@ -12,6 +12,10 @@ task :bootstrap do
   puts "Installing Bower dependencies"
   sh "bower install"
 
+  puts "Copying config.xml into place"
+  sh "mkdir -p www"
+  sh "cp source/config.xml www"
+
   puts "Installing Cordova and plugins"
   sh "cordova plugin add cordova-plugin-device"
   sh "cordova plugin add cordova-plugin-dialogs"

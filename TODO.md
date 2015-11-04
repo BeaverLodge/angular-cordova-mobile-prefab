@@ -4,6 +4,9 @@ Are you interested in taking any of these on? Open an issue in Github and let th
 
 ## Code
 
+ - [ ] Push all setup of the development environment into scripts
+ - [ ] Push development into a Vagrant VM?
+
 ## Writing
 
  - [ ] Flesh out each of the documents. Notes are in each of them.
