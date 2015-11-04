@@ -1,5 +1,3 @@
-$action-button-width: 45px;
-
 .navigation {
   background-color: $navbar-background;
 
@@ -8,55 +6,19 @@ $action-button-width: 45px;
     text-decoration: none;
   }
 
-  .action {
-    position: absolute;
-    
-    height: 100%;
-    width: $action-button-width;
-    
-    text-align: center;
-
-    visibility: hidden;
-    &.visible {
-      visibility: visible;
-    }
-
-    $action-margin: 3px;
-    &.back {
-      left: $action-margin;
-      img {
-        width: 70%;
-        height: 90%;
-      }
-    }
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .back-action {
-    >.title {
-      display: none;
-    }
-  }
-
-  .top-bar {
-    >.title {
-      @include center-in-parent;
-    }
-  }
-
   .fa {
     font-size: 25px;
     margin-top: 10px;
   }
 
   .title {
+    @include center-in-parent(0%, 50%);
+
     text-transform: uppercase;
     color: white;
     font-size: 1.25em;
-    width: 200px;
+    line-height: $topbar-height;
+    width: 220px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -65,38 +27,10 @@ $action-button-width: 45px;
 
 .android {
   .navigation {
-    .logo {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: $action-button-width
-
-  ;
-      height: 100%;
-      background-image: url(../img/logo.png);
-      background-position: center;
-      background-size: 70% 70%;
-      background-repeat: no-repeat;
-    }
-
     .title {
-      position: absolute;
-      left: $action-button-width
-
-  ;
-      margin-top: 10px;
-    }
-
-    .back-action {
-      >.title {
-        display: inline-block;
-      }
-    }
-
-    .top-bar {
-      >.title {
-        display: none;
-      }
+      text-align: left;
+      left: $menu-icon-width;
+      transform: none;
     }
   }
 }
