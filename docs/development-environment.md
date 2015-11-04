@@ -80,7 +80,7 @@ Edit the file `source/config.xml` and set your `id`, `name`, `author`, and `desc
 $ bundle exec rake bootstrap
 ```
 
-## Running your site/app the browser
+## Running your site/app in the browser
 
 So for general development you kick up the middleman server and see the results of your work in the browser.
 
@@ -94,6 +94,8 @@ Edit your source files (under the folder `source`), refresh your browser and see
 
 [Chrome device emulation](https://developer.chrome.com/devtools/docs/device-mode) is handy for development. The emulation isn't perfect however so you will want to test on simulators and physical devices also.
 
+This is what Chrome emulation looks like:
+
 ![An example of Chrome Emulation Mode](images/chrome-emulator-mode.png)
 
 ## Running on iOS
@@ -106,7 +108,7 @@ $ bundle exec rake ios:build
 
 Then open up the Xcode project at `platforms/ios/*.xcodeproj`, select the emulator you want and hit the play button.
 
-Similarly you can choose a physical device you've plugged in via USB and run on that.
+Similarly, you can choose a physical device you've plugged in via USB and run on that.
 
 ## Running on Android
 
@@ -116,7 +118,7 @@ It is all wrapped up in a single task:
 $ bundle exec rake android:run
 ```
 
-If there is an Android plugged in via USB and in debug mode it will install on there otherwise it will choose whatever simulator you have registered in android avd.
+If there is an Android plugged in via USB and in debug mode it will install on there, otherwise it will choose whatever simulator you have registered in android avd.
 
 ## Build Release
 
