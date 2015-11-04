@@ -1,2 +1,6 @@
 .sidebar{snap: {drawer: ''}}
-  %h1 Drawer!
+  %h1 Prefab App
+
+  %ol
+    %li{ 'ng-click': "vm.go('home')", 'ng-class': "{active: vm.isActive('/home')}" } Home
+    %li{ 'ng-click': "vm.go('list')", 'ng-class': "{active: vm.isActive('/list')}" } List
