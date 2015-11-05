@@ -1,7 +1,5 @@
-.page.list-page
+%page.list-page
   %ul
     %li{ng: {repeat: 'entry in vm.entries'}}
       %a{href: '#/entries/{{entry.id}}'}
         %button {{ entry.name }}
-
-%side-dragger

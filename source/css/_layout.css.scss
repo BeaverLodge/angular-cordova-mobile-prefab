@@ -31,6 +31,10 @@ html, body {
   height: 100%;
   left: 0;
   top: 0;
+
+  &.disabled {
+    width: 0;
+  }
 }
 
 .page-container {
@@ -40,12 +44,13 @@ html, body {
   height: 100%;
 }
 
-.page {
+page {
   height: 100%;
   padding: $page-padding;
   padding-bottom: $topbar-height + $page-padding;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  display: block;
 }
 
 .splash {

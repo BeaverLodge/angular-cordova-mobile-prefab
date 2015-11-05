@@ -1,4 +1,4 @@
-.page.tabs-page
+%page.tabs-page
   %ul.tab-headers
     %li.tab-header{ng: {repeat: 'tab in vm.tabs', class: '{active: tab == vm.selectedTab}'}}
       %a{href: 'javascript:void(0)', ng: {click: 'vm.selectContent($index)'}} {{ tab.label }}
@@ -9,5 +9,3 @@
       = partial '/partials/tab2'
     .tab
       = partial '/partials/tab3'
-
-%side-dragger
