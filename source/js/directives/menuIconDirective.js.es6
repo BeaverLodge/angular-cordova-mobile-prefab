@@ -11,13 +11,21 @@ angular.module('app').directive('menuIcon', ['snapRemote', function(snapRemote) 
           return snapper.state().state === 'closed';
         };
 
+        const isOpen = function() {
+          return !isClosed();
+        }
+
         $scope.hasBackAction = function() {
           return $scope.backAction !== null;
         }
 
         $scope.performAction = function() {
           if ($scope.hasBackAction()) {
-            $scope.backAction();
+            if (isOpen()) {
+              snapper.close('left');
+            } else {
+              $scope.backAction();
+            }
           } else {
             if (isClosed()) {
               snapper.open('left');
