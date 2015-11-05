@@ -27,7 +27,7 @@ html, body {
 
 .side-dragger {
   position: fixed;
-  width: $page-padding;
+  width: $page-padding * 1.5;
   height: 100%;
   left: 0;
   top: 0;
