@@ -1,23 +1,8 @@
-@mixin slide-transition($reverse: false) {
-  &.ng-enter, &.ng-leave {
-    transition: all 0.5s ease;
-  }
-
-  &.ng-enter {
-    @if $reverse {
-      transform: translate3d(-100%, 0, 0);
-    } @else {
-      transform: translate3d(100%, 0, 0);
-    }
-
-    z-index: 8888;
-  }
-
-  &.ng-enter-active {
-    transform: translate3d(0, 0, 0);
-  }
-
+$transition-time: 0.5s;
+@mixin horizontal-slide-transition-exit($reverse: false) {
   &.ng-leave {
+    transition: all $transition-time ease;
+
     transform: translate3d(0, 0, 0);
     z-index: 9999;
   }
@@ -31,36 +16,93 @@
   }
 }
 
-@mixin pop-transition {
-  &.ng-enter, &.ng-leave {
-    transition: all 0.5s ease;
+@mixin horizontal-slide-transition-enter($reverse: false) {
+   &.ng-enter {
+    transition: all $transition-time ease;
+
+    @if $reverse {
+      transform: translate3d(-100%, 0, 0);
+    } @else {
+      transform: translate3d(100%, 0, 0);
+    }
+
+    z-index: 8888;
   }
 
-  &.ng-enter {
-    transform: scale3d(0,0,0);
+  &.ng-enter-active {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@mixin vertical-slide-transition-exit($reverse: false) {
+  &.ng-leave {
+    transition: all $transition-time ease;
+
+    transform: translate3d(0, 0, 0);
+    z-index: 9999;
   }
 
-  &.ng-enter-active, &.ng-leave, &.ng-leave-active {
+  &.ng-leave-active {
+    @if $reverse {
+      transform: translate3d(0, 100%, 0);  
+    } @else {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+}
+
+@mixin vertical-slide-transition-enter($reverse: false) {
+   &.ng-enter {
+    transition: all $transition-time ease;
+
+    @if $reverse {
+      transform: translate3d(0, -100%, 0);
+    } @else {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    z-index: 8888;
+  }
+
+  &.ng-enter-active {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@mixin pop-transition-exit {
+  &.ng-leave {
+    transition: all $transition-time ease;
     transform: scale3d(1,1,1);
   }
 
   &.ng-leave-active {}
 }
 
-@mixin fade-transition {
-  &.ng-enter, &.ng-leave {
-    transition: all 0.5s ease;
+@mixin pop-transition-enter {
+  &.ng-enter {
+    transition: all $transition-time ease;
+    transform: scale3d(0,0,0);
   }
 
+  &.ng-enter-active {
+    transform: scale3d(1,1,1);
+  }
+}
+
+@mixin fade-transition-exit {
   &.ng-enter {
+    transition: all $transition-time ease;
     opacity: 0;
   }
 
   &.ng-enter-active {
     opacity: 1;
   }
+}
 
+@mixin fade-transition-enter {
   &.ng-leave {
+    transition: all $transition-time ease;
     opacity: 1;
   }
 
@@ -69,22 +111,53 @@
   }
 }
 
-.android {
-  .page-container {
-    transform: translate3d(0, 0, 0);
-    @include fade-transition;
+.page-container {
+  &.pop-enter {
+    @include pop-transition-enter;
+  }
+
+  &.pop-exit {
+    @include pop-transition-exit;
+  }
+
+  &.slide-left-enter {
+    @include horizontal-slide-transition-enter(true);
+  }
+
+  &.slide-left-exit {
+    @include horizontal-slide-transition-exit(true);
+  }
+
+  &.slide-right-enter {
+    @include horizontal-slide-transition-enter(false);
+  }
+
+  &.slide-right-exit {
+    @include horizontal-slide-transition-exit(false);
+  }
+
+  &.slide-up-enter {
+    @include vertical-slide-transition-enter(false);
+  }
+
+  &.slide-up-exit {
+    @include vertical-slide-transition-exit(false);
+  }
+
+  &.slide-down-enter {
+    @include vertical-slide-transition-enter(true);
+  }
+
+  &.slide-down-exit {
+    @include vertical-slide-transition-exit(true);
+  }
+
+  &.fade-enter {
+    @include fade-transition-enter;
+  }
+
+  &.fade-exit {
+    @include fade-transition-exit;
   }
 }
 
-.ios {
-  .page-container {
-    transform: translate3d(0, 0, 0);
-    @include slide-transition;
-  }
-
-  &.back {
-    .page-container {
-      @include slide-transition(true)
-    }
-  }
-}

@@ -1,4 +1,4 @@
-.page.home-page
+%page.home-page{drawer: 'true', 'enter-transition': 'slide-up', 'exit-transition': 'slide-down'}
   %ul
     %li
       %a{href: '#/list'}
@@ -9,5 +9,3 @@
         %button {{ vm.labelForTabs }} 
 
   %a{href: 'javascript:void(0);', ng: {click: 'vm.loadData()'}} {{ vm.labelForData }}
-
-%side-dragger
