@@ -25,6 +25,18 @@ angular.module('app').directive('menuIcon', ['snapRemote', function(snapRemote) 
           }
         }
       });
+
+      // If we're at a "top-level" page with no back action, 
+      // when we receive the Android back button, exit the app
+      document.addEventListener('backbutton', function(e) {
+        $scope.$apply(function() {
+          if ($scope.hasBackAction()) { 
+            $scope.backAction();
+          } else {
+            navigator.app.exitApp(); 
+          }
+        });
+      }); 
     },
     link: function(scope, element, attrs) {
       const menuIcon = element.find('.menu-icon');

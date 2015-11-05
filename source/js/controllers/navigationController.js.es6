@@ -15,25 +15,6 @@ class Controller {
         }
       });
     });
-
-    document.addEventListener('backbutton', function(e) {
-      $scope.$apply(function() {
-        if ($location.path() === '/home') { 
-          navigator.app.exitApp(); 
-        } else {
-          self.backAction();
-        }
-      });
-    });
-
-    window.backInProgress = 0;
-    self.backClicked = () => {
-      if (self.backAction) {
-        window.backInProgress++;
-        $('body').addClass('back');
-        self.backAction();    
-      }
-    };
   }
 }
 
