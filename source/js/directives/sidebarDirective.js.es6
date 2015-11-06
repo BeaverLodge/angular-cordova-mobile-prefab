@@ -1,4 +1,4 @@
-angular.module('app').directive('sidebar', ['snapRemote', function(snapRemote) {
+angular.module('app').directive('bvrSidebar', ['snapRemote', function(snapRemote) {
   return {
     restrict: "E",
     templateUrl: 'partials/sidebar.html',

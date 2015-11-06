@@ -1,4 +1,4 @@
-angular.module('app').directive('page', [function() {
+angular.module('app').directive('bvrPage', [function() {
   return {
     restrict: "E",
     controller: function($scope) {

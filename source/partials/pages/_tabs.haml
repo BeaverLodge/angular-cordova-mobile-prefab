@@ -1,4 +1,4 @@
-%page.tabs-page
+%bvr-page.tabs-page
   %ul.tab-headers
     %li.tab-header{ng: {repeat: 'tab in vm.tabs', class: '{active: tab == vm.selectedTab}'}}
       %a{href: 'javascript:void(0)', ng: {click: 'vm.selectContent($index)'}} {{ tab.label }}
