@@ -1,10 +1,10 @@
-angular.module('app').directive('menuIcon', ['snapRemote', function(snapRemote) {
+angular.module('app').directive('bvrMenu', ['snapRemote', function(snapRemote) {
   return {
     restrict: "E",
     scope: {
       backAction: '='
     },
-    templateUrl: 'partials/menu_icon.html',
+    templateUrl: 'partials/menu.html',
     controller: function($scope) {
       snapRemote.getSnapper().then(function (snapper) {
         const isClosed = function() {

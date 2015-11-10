@@ -25,7 +25,7 @@ html, body {
   overflow: hidden;
 }
 
-.side-dragger {
+.dragger {
   position: fixed;
   width: $page-padding * 1.5;
   height: 100%;
@@ -44,7 +44,7 @@ html, body {
   height: 100%;
 }
 
-page {
+bvr-page {
   height: 100%;
   padding: $page-padding;
   padding-bottom: $topbar-height + $page-padding;
