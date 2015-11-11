@@ -1,5 +1,5 @@
 %bvr-page.list-page
   %ul
     %li{ng: {repeat: 'entry in vm.entries'}}
-      %a{href: '#/entries/{{entry.id}}'}
+      %a{href: 'javascript:void(0)', 'ng-click': "vm.go('/entries/{{entry.id}}')"}
         %button {{ entry.name }}

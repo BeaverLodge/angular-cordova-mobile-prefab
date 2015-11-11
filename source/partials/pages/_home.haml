@@ -1,11 +1,11 @@
-%bvr-page.home-page{drawer: 'true', 'enter-transition': 'slide-up', 'exit-transition': 'slide-down'}
+%bvr-page.home-page{drawer: 'true'}
   %ul
     %li
-      %a{href: '#/list'}
+      %a{href: 'javascript:void(0)', 'ng-click': "vm.go('/list')"}
         %button {{ vm.labelForList }}
 
     %li
-      %a{href: '#/tabs'}
+      %a{href: 'javascript:void(0)', 'ng-click': "vm.go('/tabs')"}
         %button {{ vm.labelForTabs }} 
 
   %a{href: 'javascript:void(0);', ng: {click: 'vm.loadData()'}} {{ vm.labelForData }}

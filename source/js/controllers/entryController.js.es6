@@ -1,12 +1,12 @@
 class Controller {
-  constructor($rootScope, $routeParams, entryService, audioService) {
+  constructor($rootScope, $routeParams, entryService, transitionService, audioService) {
     const self = this;
 
     $rootScope.$emit('navigationConfig',
       {
         labelForTitle: "",
         backAction: function() {
-          window.history.back();
+          transitionService.transitionTo('/list', 'slide-right', 'slide-right')
         }
       }
     );
@@ -29,4 +29,4 @@ class Controller {
   }
 }
 
-angular.module('app').controller('entryController', ['$rootScope', '$routeParams', 'entryService', 'audioService', Controller]);
+angular.module('app').controller('entryController', ['$rootScope', '$routeParams', 'entryService', 'transitionService', 'audioService', Controller]);

@@ -1,19 +1,23 @@
 class Controller {
-  constructor($rootScope, $location, i18nService, entryService) {
+  constructor($rootScope, transitionService, i18nService, entryService) {
     const self = this;
 
     $rootScope.$emit('navigationConfig', 
       {
         labelForTitle: i18nService.get('listTitle'),
         backAction: function() {
-          $location.path('/home');
+          transitionService.transitionTo('/home', 'slide-right', 'slide-right');
         }
       }
     );
 
     self.entries = [];
     entryService.all().then((entries) => self.entries = entries);
+
+    self.go = (path) => {
+      transitionService.transitionTo(path, 'slide-left', 'slide-left');
+    };
   }
 }
 
-angular.module('app').controller('listController', ['$rootScope', '$location', 'i18nService', 'entryService', Controller]);
+angular.module('app').controller('listController', ['$rootScope', 'transitionService', 'i18nService', 'entryService', Controller]);

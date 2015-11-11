@@ -1,12 +1,12 @@
 class Controller {
-  constructor($rootScope, $location, i18nService) {
+  constructor($rootScope, transitionService, i18nService) {
     const self = this;
 
     $rootScope.$emit('navigationConfig', 
       {
         labelForTitle: i18nService.get('tabsTitle'),
         backAction: function() {
-          $location.path('/home');
+          transitionService.transitionTo('/home', 'slide-right', 'slide-right');
         }
       }
     );
@@ -40,4 +40,4 @@ class Controller {
   }
 }
 
-angular.module('app').controller('tabsController', ['$rootScope', '$location', 'i18nService', Controller]);
+angular.module('app').controller('tabsController', ['$rootScope', 'transitionService', 'i18nService', Controller]);

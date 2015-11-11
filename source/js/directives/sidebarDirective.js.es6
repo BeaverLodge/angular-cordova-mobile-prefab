@@ -2,7 +2,7 @@ angular.module('app').directive('bvrSidebar', ['snapRemote', function(snapRemote
   return {
     restrict: "E",
     templateUrl: 'partials/sidebar.html',
-    controller: function($location) {
+    controller: function($location, transitionService) {
       const self = this;
 
       self.isActive = (path) => {
@@ -11,7 +11,7 @@ angular.module('app').directive('bvrSidebar', ['snapRemote', function(snapRemote
 
       snapRemote.getSnapper().then(function (snapper) {
         self.go = (path) => {
-          $location.path(path);
+          transitionService.transitionTo(path);
           snapper.close('left');
         };
       });
