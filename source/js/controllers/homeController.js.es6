@@ -1,5 +1,5 @@
 class Controller {
-  constructor($rootScope, i18nService, entryService, snapRemote) {
+  constructor($rootScope, i18nService, entryService, transitionService, snapRemote) {
     const self = this;
 
     $rootScope.$emit('navigationConfig', 
@@ -12,6 +12,10 @@ class Controller {
     self.labelForList = i18nService.get('homeList');
     self.labelForTabs = i18nService.get('homeTabs');
     self.labelForData = i18nService.get('homeData');
+
+    self.go = (path) => {
+      transitionService.transitionTo(path, 'slide-left', 'slide-left');
+    };
 
     self.loadData = function() {
       ['','','','','','','','','','','','','','','','','','','','',''].forEach((i,idx) => {
@@ -26,4 +30,4 @@ class Controller {
   }
 }
 
-angular.module('app').controller('homeController', ['$rootScope', 'i18nService', 'entryService', 'snapRemote', Controller]);
+angular.module('app').controller('homeController', ['$rootScope', 'i18nService', 'entryService', 'transitionService', 'snapRemote', Controller]);

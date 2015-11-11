@@ -111,53 +111,74 @@ $transition-time: 0.5s;
   }
 }
 
-.page-container {
-  &.pop-enter {
+.transition-enter-pop {
+  .page-container {
     @include pop-transition-enter;
   }
+}
 
-  &.pop-exit {
+.transition-exit-pop {
+  .page-container {
     @include pop-transition-exit;
   }
+}
 
-  &.slide-left-enter {
-    @include horizontal-slide-transition-enter(true);
-  }
-
-  &.slide-left-exit {
-    @include horizontal-slide-transition-exit(true);
-  }
-
-  &.slide-right-enter {
-    @include horizontal-slide-transition-enter(false);
-  }
-
-  &.slide-right-exit {
-    @include horizontal-slide-transition-exit(false);
-  }
-
-  &.slide-up-enter {
-    @include vertical-slide-transition-enter(false);
-  }
-
-  &.slide-up-exit {
-    @include vertical-slide-transition-exit(false);
-  }
-
-  &.slide-down-enter {
-    @include vertical-slide-transition-enter(true);
-  }
-
-  &.slide-down-exit {
-    @include vertical-slide-transition-exit(true);
-  }
-
-  &.fade-enter {
+.transition-enter-fade {
+  .page-container {
     @include fade-transition-enter;
   }
+}
 
-  &.fade-exit {
+.transition-exit-fade {
+  .page-container {
     @include fade-transition-exit;
   }
 }
 
+.transition-enter-slide-up {
+  .page-container {
+    @include vertical-slide-transition-enter;
+  }
+}
+
+.transition-enter-slide-down {
+  .page-container {
+    @include vertical-slide-transition-enter(true);
+  }
+}
+
+.transition-exit-slide-up {
+  .page-container {
+    @include vertical-slide-transition-exit;
+  }
+}
+
+.transition-exit-slide-down {
+  .page-container {
+    @include vertical-slide-transition-exit(true);
+  }
+}
+
+.transition-enter-slide-left {
+  .page-container {
+    @include horizontal-slide-transition-enter;
+  }
+}
+
+.transition-enter-slide-right {
+  .page-container {
+    @include horizontal-slide-transition-enter(true);
+  }
+}
+
+.transition-exit-slide-left {
+  .page-container {
+    @include horizontal-slide-transition-exit;
+  }
+}
+
+.transition-exit-slide-right {
+  .page-container {
+    @include horizontal-slide-transition-exit(true);
+  }
+}
